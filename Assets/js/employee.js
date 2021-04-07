@@ -23,7 +23,6 @@ function addTeam() {
     }    
     ])
     .then ((response) => {
-        console.log(response)
         if (response.employee == 'none') {
             return;
         }
@@ -62,7 +61,6 @@ function addIntern() {
     }
     ])
     .then ((response) => {
-    console.log(response);
     addTeam();
     })
 }    
@@ -91,7 +89,6 @@ function addEngineer() {
     }
     ])
     .then ((response) => {
-    console.log(response);
     addTeam();
     })
 }    

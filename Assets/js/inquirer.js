@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const fs = require('fs');
 const addTeam = require('./employee');
 const generateTeamPage = require('./generatehtml');
 
@@ -28,6 +29,9 @@ function init() {
     .then ((response) => {
         console.log(response);
         addTeam(response);
+        fs.writeFile('log.txt', generateTeamPage(response), (err) => 
+        err ? console.error(err) : console.log('Success!')
+        );
     })
 }
 
