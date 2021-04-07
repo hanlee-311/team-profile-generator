@@ -1,4 +1,6 @@
-class Manager {
+const Employee = require('./employee')
+
+class Manager extends Employee {
     constructor (officeNumber) {
         super(empName, id, email);
 
@@ -9,3 +11,5 @@ class Manager {
         return 'Manager'
     }
 }
+
+module.export = Manager;

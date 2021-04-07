@@ -1,6 +1,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateTeamPage = require('./js/generatehtml');
+const Manager = require('./js/manager');
+
+const myTeam = [];
 
 function init() {
     inquirer
@@ -26,10 +29,9 @@ function init() {
         },
     ])
     .then ((response) => {
+        const manager = new Manager(empName, id, office);
+        myTeam.push(manager)
         addTeam(response);
-        // fs.writeFile('log.txt', generateTeamPage(response), (err) => 
-        // err ? console.error(err) : console.log('Success!')
-        // );
     })
 }
 
