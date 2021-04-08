@@ -2,6 +2,8 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateTeamPage = require('./js/generatehtml');
 const Manager = require('./js/manager');
+const Intern = require('./js/engineer');
+const Engineer = require('./js/engineer');
 
 const myTeam = [];
 
@@ -31,7 +33,7 @@ function init() {
     .then ((response) => {
         const manager = new Manager(response.name, response.id, response.email, response.office);
         myTeam.push(manager);
-        addTeam(response);
+        addTeam();
     })
 }
 
@@ -96,7 +98,9 @@ function addIntern() {
     }
     ])
     .then ((response) => {
-    addTeam();
+        const intern = new Intern(response.name, response.id, response.email, response.school);
+        myTeam.push(intern);
+        addTeam();
     })
 }    
 
@@ -124,7 +128,9 @@ function addEngineer() {
     }
     ])
     .then ((response) => {
-    addTeam();
+        const engineer = new Engineer(response.name, response.id, response.email, response.Github);
+        myTeam.push(engineer);
+        addTeam();
     })
 }    
 
