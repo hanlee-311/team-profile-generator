@@ -29,8 +29,8 @@ function init() {
         },
     ])
     .then ((response) => {
-        const manager = new Manager(empName, id, office);
-        myTeam.push(manager)
+        const manager = new Manager(response.name, response.id, response.email, response.office);
+        myTeam.push(manager);
         addTeam(response);
     })
 }
@@ -59,7 +59,7 @@ function addTeam() {
     ])
     .then ((response) => {
         if (response.employee == 'none') {
-            return;
+            return console.log(myTeam);
         }
 
         if (response.employee == 'engineer') {
