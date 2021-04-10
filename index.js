@@ -1,9 +1,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateTeamPage = require('./library/generatehtml');
-const Manager = require('./library/manager');
-const Intern = require('./library/intern');
-const Engineer = require('./library/engineer');
+const Manager = require('./library/Manager');
+const Intern = require('./library/Intern');
+const Engineer = require('./library/Engineer');
 
 const myTeam = [];
 
