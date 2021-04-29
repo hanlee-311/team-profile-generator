@@ -4,6 +4,7 @@ const generateTeamPage = require('./library/generatehtml');
 const Manager = require('./library/Manager');
 const Intern = require('./library/Intern');
 const Engineer = require('./library/Engineer');
+const path = require('path');
 
 const myTeam = [];
 
@@ -61,7 +62,7 @@ function addTeam() {
     ])
     .then ((response) => {
         if (response.employee === 'none') {
-            return console.log(myTeam);
+            buildTeam();
         }
 
         if (response.employee === 'engineer') {
@@ -128,10 +129,20 @@ function addEngineer() {
     }
     ])
     .then ((response) => {
-        const engineer = new Engineer(response.EngineerName, response.engineerId, response.engineerEmail, response.Github);
+        const engineer = new Engineer(response.engineerName, response.engineerId, response.engineerEmail, response.GitHub);
         myTeam.push(engineer);
         addTeam();
     })
 }    
+
+function buildTeam() {
+    const directory = path.resolve(__dirname, 'output');
+
+    if (!fs.existsSync(directory)) {
+        fs.mkdirSync(directory);
+    }
+
+    fs.writeFileSync(path.join(directory, 'index.html'), generateTeamPage(myTeam))
+}
 
 init();
