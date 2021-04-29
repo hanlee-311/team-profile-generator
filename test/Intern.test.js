@@ -42,7 +42,7 @@ test('Intern school via the constructor', () => {
 test('Can get school from getSchool', () => {
     const testvalue = 'High School';
 
-    const emp = new Intern(testvalue);
+    const emp = new Intern('foo', '1234', 'bobby@gmail.com', testvalue);
 
     expect(emp.getSchool()).toBe(testvalue);
 })

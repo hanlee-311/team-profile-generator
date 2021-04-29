@@ -42,7 +42,7 @@ test('Can get name from getEmpName', () => {
 test('Can get id from getID', () => {
     const testvalue = '1234';
 
-    const emp = new Employee(testvalue);
+    const emp = new Employee('foo', testvalue);
 
     expect(emp.getId()).toBe(testvalue);
 })
@@ -50,7 +50,7 @@ test('Can get id from getID', () => {
 test('Can get email from email', () => {
     const testvalue = 'bobby@gmail.com';
 
-    const emp = new Employee(testvalue);
+    const emp = new Employee('foo', '1234', testvalue);
 
     expect(emp.getEmail()).toBe(testvalue);
 })

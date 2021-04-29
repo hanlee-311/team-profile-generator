@@ -42,7 +42,7 @@ test('Manager officeNumber via the constructor', () => {
 test('Can get office number from getOfficeNumber', () => {
     const testvalue = '56789';
 
-    const emp = new Manager(testvalue);
+    const emp = new Manager('foo', '1234', 'bobby@gmail.com', testvalue);
 
     expect(emp.getOfficeNumber()).toBe(testvalue);
 })

@@ -42,7 +42,7 @@ test('Engineer gitHub via the constructor', () => {
 test('Can get github from getGithub', () => {
     const testvalue = 'mygit';
 
-    const emp = new Engineer(testvalue);
+    const emp = new Engineer('foo', '1234', 'bobby@gmail.com', testvalue);
 
     expect(emp.getGithub()).toBe(testvalue);
 })
