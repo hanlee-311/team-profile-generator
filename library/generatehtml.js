@@ -2,34 +2,66 @@ function generateTeamPage(team) {
     const generateManager = manager => {
         return `
         <div class="row">
-        <div class="col s12 m6">
-        <div class="card">
-        <div class="card-content red lighten-3">
-        <span class="card-title" style='font-weight: bold;'>${manager.getEmpName()}</span>
-        <span class="card-title" style='font-weight: bold;'><i class="free_breakfast"></i>${manager.getRole()}</span>
-            <div class="card-content red lighten-5">
-            <ul class="collection">
-                <li class="collection-item">ID: ${manager.getId()}</li>
-                <li class="collection-item">Email: ${manager.getEmail()}</li>
-                <li class="collection-item">Office Number: ${manager.getOfficeNumber()}</li>
-            </ul>
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-content red lighten-3">
+                        <span class="card-title" style='font-weight: bold;'>${manager.getEmpName()}</span>
+                        <span class="card-title" style='font-weight: bold;'><i class="free_breakfast"></i>${manager.getRole()}</span>
+                    <div class="card-content red lighten-5">
+                        <ul class="collection">
+                            <li class="collection-item">ID: ${manager.getId()}</li>
+                            <li class="collection-item">Email: ${manager.getEmail()}</li>
+                            <li class="collection-item">Office Number: ${manager.getOfficeNumber()}</li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        </div>
-        </div>
         </div>
         `
     }
 
     const generateEngineer = engineer => {
         return `
-        <h1>${engineer.getEmpName()}<h1>
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-content red lighten-3">
+                        <span class="card-title" style='font-weight: bold;'>${engineer.getEmpName()}</span>
+                        <span class="card-title" style='font-weight: bold;'><i class="free_breakfast"></i>${engineer.getRole()}</span>
+                    <div class="card-content red lighten-5">
+                        <ul class="collection">
+                            <li class="collection-item">ID: ${engineer.getId()}</li>
+                            <li class="collection-item">Email: ${engineer.getEmail()}</li>
+                            <li class="collection-item">Office Number: ${engineer.getOfficeNumber()}</li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         `
     }
 
     const generateIntern = intern => {
         return `
-        <h1>${intern.getEmpName()}<h1>
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-content red lighten-3">
+                        <span class="card-title" style='font-weight: bold;'>${intern.getEmpName()}</span>
+                        <span class="card-title" style='font-weight: bold;'><i class="free_breakfast"></i>${intern.getRole()}</span>
+                    <div class="card-content red lighten-5">
+                        <ul class="collection">
+                            <li class="collection-item">ID: ${intern.getId()}</li>
+                            <li class="collection-item">Email: ${intern.getEmail()}</li>
+                            <li class="collection-item">Office Number: ${intern.getOfficeNumber()}</li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         `
     }
 
